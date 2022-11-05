@@ -19,7 +19,6 @@ public class DoubleLinkedList_1<E> {
       this.primero.setSiguiente(newnode);
       this.ultimo.setSiguiente(newnode);*/
       this.size++;
-        System.out.println("n");
 
       return true;
     } 
@@ -45,13 +44,14 @@ public class DoubleLinkedList_1<E> {
       } else {
         Node<E> newNode = new Node<>(e);
         Node<E> temp = this.primero;
-        for (int i = 0; i != index; i++) {
+        for (int i = 0; i != index-1; i++) {
           temp = temp.getSiguiente();
         }
         newNode.setSiguiente(temp.getSiguiente());
         newNode.setAnterior(temp);
         temp.getSiguiente().setAnterior(newNode);
         temp.setSiguiente(newNode);
+       
         this.size++;
         return true;
       }
