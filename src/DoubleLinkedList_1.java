@@ -14,22 +14,25 @@ public class DoubleLinkedList_1<E> {
 
     if (isEmpty()) {
       this.primero = newnode;
-      // this.primero.setSiguiente(newnode);
-
       this.ultimo = newnode;
-      // this.ultimo.setSiguiente(newnode)
+      /*
+      this.primero.setSiguiente(newnode);
+      this.ultimo.setSiguiente(newnode);*/
       this.size++;
+        System.out.println("n");
+
       return true;
-    } else if (e != null) {
+    } 
+    else {
       newnode.setSiguiente(this.primero);
-      this.primero.setAnterior(newnode);
+      newnode.setAnterior(this.ultimo);
+     // this.primero.setAnterior(newnode);
       this.primero = newnode;
       this.ultimo.setSiguiente(this.primero);
       this.size++;
       return true;
     }
 
-    return false;
 
   }
 
@@ -154,24 +157,30 @@ public class DoubleLinkedList_1<E> {
 
   @Override
     public String toString() {
-        Node<E> n;
-        String s= "";
-        for (n = this.primero; n != ultimo; n = n.getSiguiente()) {
-            E e = n.getContenido();
-            s+= e.toString()+ " ";
+       String s= "";
+     
+       Node<E> n = this.ultimo;
+       int cont = 0;
+        while(cont<size){
+                n = n.getSiguiente();
+                s+= n.toString()+ " ";
+                cont++;
         }
-        //System.out.println(s);
         return s;
     }
   
   
   public void recorrer(){
-        Node<E> n;
-        String s= "";
-        for (n = this.primero; n != ultimo; n = n.getSiguiente()) {
-            E e = n.getContenido();
-            s+= e.toString()+ " ";
+       String s= "";
+     
+       Node<E> n = this.ultimo;
+       int cont = 0;
+        while(cont<size){
+                n = n.getSiguiente();
+                s+= n.toString()+ " ";
+                cont++;
         }
+       
         System.out.println(s);
     }
 

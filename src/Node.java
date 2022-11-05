@@ -32,4 +32,10 @@ public class Node<E> {
     public void setAnterior(Node<E> anterior) {
       this.anterior = anterior;
     }
+
+    @Override
+    public String toString() {
+        return  String.valueOf(this.getContenido());
+    }
+    
 }
