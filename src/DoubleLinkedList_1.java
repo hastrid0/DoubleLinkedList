@@ -80,10 +80,10 @@ public class DoubleLinkedList_1<E> {
   // Retira el primer elemento
   public E removeFirst() {
 
-    primero.getSiguiente().setAnterior(ultimo);
-    this.ultimo.setSiguiente(primero.getSiguiente());
+    this.primero.getSiguiente().setAnterior(this.ultimo);
+    this.ultimo.setSiguiente(this.primero.getSiguiente());
     this.size--;
-    return primero.getContenido();
+    return this.primero.getContenido();
 
   }
 
@@ -92,9 +92,10 @@ public class DoubleLinkedList_1<E> {
     E elemento = null;
     if (index < 0 || index >= size) {
       return null;
-    } else {
+    } 
+    else {
       Node<E> p = getAnterior(index);
-      Node<E> t = getNode(index);
+      Node<E> t = get(index);
       Node<E> x = t.getSiguiente();
       p.setSiguiente(x);
       size--;
@@ -107,9 +108,9 @@ public class DoubleLinkedList_1<E> {
   // Retira el ultimo
   public E removeLast() {
     this.ultimo.getAnterior().setSiguiente(this.primero);
-    primero.setAnterior(ultimo.getAnterior());
+    this.primero.setAnterior(this.ultimo.getAnterior());
     this.size--;
-    return ultimo.getContenido();
+    return this.ultimo.getContenido();
   }
 
   public E getFirst() {
@@ -127,14 +128,19 @@ public class DoubleLinkedList_1<E> {
     return resultado;
   }
 
-  public Node<E> getNode(int j) {
-    int i = 0;
-    Node<E> resultado = null;
-    for (Node<E> n = primero; n != ultimo; n = n.getSiguiente()) {
-      if (i++ == j) {
-        resultado = n;
-      }
-    }
+  public Node<E> get(int j) {
+
+    Node<E> n = this.ultimo;
+    Node<E> resultado = new Node<>();
+    
+       int cont = -1;
+        while(cont!=j){
+                n = n.getSiguiente();
+                cont++;
+                if(cont == j){
+                    resultado = n;
+                }
+        }
     return resultado;
   }
 

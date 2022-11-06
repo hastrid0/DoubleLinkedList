@@ -8,6 +8,10 @@ public class Node<E> {
         this.siguiente = null;
         this.anterior = null;
     }
+    public Node(){
+        this.siguiente = null;
+        this.anterior = null;
+    }
 
     public Node<E> getSiguiente() {
         return this.siguiente;
