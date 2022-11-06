@@ -1,9 +1,9 @@
-public class DoubleLinkedList_1<E> {
+public class DoubleLinkedList<E> {
   private Node<E> primero;
   private Node<E> ultimo;
   private int size;
 
-  public DoubleLinkedList_1() {
+  public DoubleLinkedList() {
     primero = null;
     ultimo = null;
     size = 0;

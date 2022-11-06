@@ -1,7 +1,7 @@
-public class Main_1 {
+public class Main {
   public static void main(String[] args) {
     //System.out.println("Hello world!");
-    DoubleLinkedList_1<Integer> lista = new DoubleLinkedList_1<>();
+    DoubleLinkedList<Integer> lista = new DoubleLinkedList<>();
     System.out.println("Is empty?");
     System.out.println(lista.isEmpty());
     
