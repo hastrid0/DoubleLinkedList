@@ -11,7 +11,7 @@ public class Main {
     lista.addFirst(89);
     lista.addFirst(90);
     System.out.println(lista);
-    
+    System.out.println("Agregado para el sonarqube");
     System.out.println("Agregar el nodo con contenido 23 en el indice 1");
     lista.add(1, 23);
     System.out.println(lista);
